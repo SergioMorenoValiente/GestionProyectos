@@ -1,0 +1,49 @@
+﻿@model Gestion_Proyectos.Models.Proyecto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles del Proyecto</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechFin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechFin)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ProyectoId }, new { @class = "btn btn-dark" })
+    @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-dark my-md-2" })
+</p>

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Gestion_Proyectos.Models.Proyecto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>Proyectos</h1>
+<br />
+<br />
+
+<p>
+    @Html.ActionLink("Crear Proyecto", "Create", null, new { @class = "btn btn-success" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechInicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechFin)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechInicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechFin)
+        </td>
+        <td>
+            <div class="btn-group m-md-3" role="group" aria-label="Acciones">
+                @Html.ActionLink("Editar", "Edit", new { id = item.ProyectoId }, new { @class = "btn btn-dark" })
+                @Html.ActionLink("Info", "Details", new { id = item.ProyectoId }, new { @class = "btn btn-dark" })
+                @Html.ActionLink("Borrar", "Delete", new { id = item.ProyectoId }, new { @class = "btn btn-dark" })
+            </div>
+            
+        </td>
+    </tr>
+}
+
+</table>
